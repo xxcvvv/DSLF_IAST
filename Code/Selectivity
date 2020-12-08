@@ -15,12 +15,12 @@ REAL(8),DIMENSION(100) ::P
 
 !Name of the input file is 'input.txt'
 !Format of file is as followed:
-!pressure ratio��use decimals��:y1 y2
+!pressure ratio(use decimals):y1 y2
 !the start and end of p,interval
 !q1 q1
 !b1 b2
 !n1 n2
-!another: q1 q2
+!q1 q2(another)
 !b1 b2
 !n1 n2
 
