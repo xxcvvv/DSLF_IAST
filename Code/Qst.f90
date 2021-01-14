@@ -1,6 +1,8 @@
 PROGRAM Qst
     !*********************************************************
     !Qst v2.0
+    !author:jim
+    !last updated:20191217
     !This program is used to calculate adsoprtion heat by 
     !pressure at three different temperature
     !*********************************************************
