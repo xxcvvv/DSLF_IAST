@@ -32,7 +32,7 @@ files=dir('*.XLSX');
         q=q1(k2);
         save tempdata.mat p q;     
         LB=[0 0 0 0 0 0];               % lower boundary 
-        UB=[10 0.01 2 10 0.01 2];       % upper boundary
+        UB=[20 0.01 2 20 0.01 2];       % upper boundary
         ObjectiveFunction = @simple_fitness; 
         nvars = 6;                      % number of varibles
         rng default;                    % for reproducibality
