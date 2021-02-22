@@ -9,7 +9,7 @@ PROGRAM IAST
    REAL(8),DIMENSION(2) :: y
    REAL(8),DIMENSION(2) ::a,b,c,r,s,t
    REAL(8) bisection,In
-   INTEGER i,j,k,n,Ps,Pe
+   INTEGER i,k,n,Ps,Pe
    REAL(8),DIMENSION(100) :: P1, P2, x1, x2, N1, N2,Se
    REAL(8),DIMENSION(100) ::P
    
