@@ -24,15 +24,14 @@ PROGRAM Qst
     open(10,file='input.txt')
     read(10,*) (T(i),i=1,3)
     read(10,*) qs,qe,it
-    read(10,*) q1(1),q2(1)
-    read(10,*) b1(1),b2(1)
-    read(10,*) n1(1),n2(1)
-    read(10,*) q1(2),q2(2)
-    read(10,*) b1(2),b2(2)
-    read(10,*) n1(2),n2(2)
-    read(10,*) q1(3),q2(3)
-    read(10,*) b1(3),b2(3)
-    read(10,*) n1(3),n2(3)
+    DO j=1,3
+        read(10,*) q1(j)
+        read(10,*) b1(j)
+        read(10,*) n1(j)
+        read(10,*) q2(j)
+        read(10,*) b2(j)
+        read(10,*) n2(j)
+        END DO
     close(10)
     
     n=(qe-qs)/it+1
