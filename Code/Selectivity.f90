@@ -8,8 +8,8 @@ PROGRAM IAST
    IMPLICIT NONE
    REAL(8),DIMENSION(2) :: y
    REAL(8),DIMENSION(2) ::a,b,c,r,s,t
-   REAL(8) bisection
-   INTEGER i, j, n,Ps,Pe,In
+   REAL(8) bisection,In
+   INTEGER i,j,k,n,Ps,Pe
    REAL(8),DIMENSION(100) :: P1, P2, x1, x2, N1, N2,Se
    REAL(8),DIMENSION(100) ::P
    
@@ -27,12 +27,14 @@ PROGRAM IAST
    OPEN (UNIT=10,FILE="input.txt")
    READ(10,*) (y(i),i=1,2)
    READ(10,*) Ps,Pe,In
-   READ(10,*) (a(i),i=1,2)
-   READ(10,*) (b(i),i=1,2)
-   READ(10,*) (c(i),i=1,2)
-   READ(10,*) (r(i),i=1,2)
-   READ(10,*) (s(i),i=1,2)
-   READ(10,*) (t(i),i=1,2)
+   DO k=1,2
+      READ(10,*) a(k)
+      READ(10,*) b(k)
+      READ(10,*) c(k)
+      READ(10,*) r(k)
+      READ(10,*) s(k)
+      READ(10,*) t(k)
+  END DO
    CLOSE(10)
    
    n=(Pe-Ps)/In+1
@@ -95,10 +97,6 @@ PROGRAM IAST
    REAL(8),DIMENSION(2) ::y
    REAL(8),DIMENSION(2) ::a,b,c,r,s,t
    REAL(8) P, x1, f,f1,f2
-   c(1)=1/c(1)
-   c(2)=1/c(2)
-   t(1)=1/t(1)
-   t(2)=1/t(2)
    f1=a(1)/c(1)*LOG(1+b(1)*(P*y(1)/x1)**c(1))+r(1)/t(1)*LOG(1+s(1)*(P*y(1)/x1)**t(1))
    f2=a(2)/c(2)*LOG(1+b(2)*(P*y(2)/(1-x1))**c(2))+r(2)/t(2)*LOG(1+s(2)*(P*y(2)/(1-x1))**t(2))
    f=f1-f2
