@@ -17,12 +17,12 @@ PROGRAM IAST
    !Format of file is as followed:
    !pressure ratio（CO2:N2,use decimals）:y1 y2
    !p_start , p_end ,interval
-   !q1 q1
-   !b1 b1
-   !n1 n1
-   !q2 q2
-   !b2 b2
-   !n2 n2
+   !q1 
+   !b1 
+   !n1 
+   !q2 
+   !b2 
+   !n2 
    
    OPEN (UNIT=10,FILE="input.txt")
    READ(10,*) (y(i),i=1,2)
