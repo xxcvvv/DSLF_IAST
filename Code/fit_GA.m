@@ -3,15 +3,15 @@ clear all;close all;
 % Last updated:20200105
 
 %% import setting
-n=6;        % number of data set
+n=6;                                                  % number of data set
+N=char(64+n);
 opts = spreadsheetImportOptions("NumVariables", n);
-opts.Sheet = "Sheet1";
-opts.DataRange = "A1:F80";
-opts.VariableNames = ["X", "Y", "X1", "Y1", "X2", "Y2"];
-opts.VariableTypes = ["double", "double", "double", "double", "double", "double"];
+opts.Sheet = "Sheet1";                                %sheet name
+opts.DataRange = ['A1:',N,'100'];
+opts.VariableTypes = repmat(["double"],1,n);
 
 %% import data
-datapath=' ';        % add datapath
+datapath='';                                          % datapath
 cd(datapath);
 files=dir('*.XLSX');
 
@@ -30,8 +30,8 @@ files=dir('*.XLSX');
         p=p1(k1);
         q=q1(k2);
         save tempdata.mat p q;     
-        LB=[0 0 0 0 0 0];               % lower boundary 
-        UB=[20 0.01 2 20 0.01 2];       % upper boundary
+        LB=[0 0 0 0 0 0];                               % lower boundary 
+        UB=[20 0.01 2 20 0.01 2];                       % upper boundary
         ObjectiveFunction = @simple_fitness; 
         nvars = 6;                      
         rng default;                    
@@ -70,7 +70,7 @@ files=dir('*.XLSX');
         clear p q fval yf yfit nvars i q1 q2 n1 n2 b1 b2 R r ymax coeff LB UB
         delete tempdata.mat
     end
-clear opts data file_name path datapath ObjectiveFunction n
+clear opts data file_name path datapath ObjectiveFunction n N
 
 %% Objective Function
 function y=simple_fitness(c)
